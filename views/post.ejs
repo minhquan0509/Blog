@@ -1,0 +1,12 @@
+<%- include('partials/header'); -%>
+<div class="content">
+    <div class="container">
+        <h1 class="content-title"><%= post.title %></h1>
+        <span class="edit-post"><i class="ti-pencil icon"></i><a href="/compose/edit/<%= post._id %>">Edit post</a></span>
+        <form id="deleteForm" style="display: inline-block;" action="/compose/delete/<%= post._id %>" method="post">
+            <span class="delete-post"><i class="ti-close icon"></i><a href="#" onclick="document.getElementById('deleteForm').submit();">Delete post</a></span>
+        </form>
+        <p class="content-paragraph"><%= post.content %></p>
+    </div>
+</div>
+<%- include('partials/footer'); -%>
