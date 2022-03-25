@@ -126,7 +126,7 @@ a{
 }
 
 .content{
-    min-height: calc(100vh - 126px);
+    min-height: calc(100vh - 170px);
     margin-top: 80px;
 }
 
@@ -187,6 +187,22 @@ a{
     float: right;
 }
 
+.logout-form{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logout-btn{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #ffe6ff;
+    font-family: inherit;
+}
+
+.logout-btn:hover{
+    cursor: pointer;
+}
+
 .edit-post,
 .delete-post{
     margin-left: 20px;
@@ -196,6 +212,28 @@ a{
 .icon{
     font-size: 12px;
     padding: 5px;
+}
+
+.contact-list{
+    display: flex;
+    /* height: 100px; */
+}
+
+.contact-item{
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.contact-icon{
+    font-size: 30px;
+    color: #9fbfdf;
+}
+
+.contact-name{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    margin: 20px 0;
 }
 
 .footer{

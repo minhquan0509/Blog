@@ -1,14 +1,19 @@
 const Post = require('../models/Post');
+const jwt = require('jsonwebtoken');
+const {promisify} = require('util');
 class ComposeController{
     index(req, res){
         res.render('compose');
     }
     create(req, res){
+        const getUser = jwt.verify(req.cookies.token, process.env.JWT_SECRET_KEY);
+        const userID = getUser.id;
         const post = new Post({
             title : req.body.postTitle,
-            content : req.body.postContent
+            content : req.body.postContent,
+            authorID: userID
         });
-        console.log(req.body);
+        console.log(req.body, userID);
         post.save(function(err){
             if(!err) res.redirect('../');
         });
