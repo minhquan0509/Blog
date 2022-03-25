@@ -4,6 +4,7 @@ body {
 }
 
 body {
+  font-family: 'Poppins', sans-serif;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
@@ -51,4 +52,9 @@ body {
 .register{
   display: inline-block;
   margin-top: 20px;
+}
+
+.wrapper{
+  background-color: #9fbfdf;
+  border-radius: 20px;
 }

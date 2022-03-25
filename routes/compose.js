@@ -5,8 +5,8 @@ const composeController = require('../app/controllers/ComposeController');
 
 router.post('/create', middlewareController.verifyToken, composeController.create);
 router.get('/edit/:postID', middlewareController.verifyUserPost,composeController.render);
-router.post('/edit/:postID', middlewareController.verifyUserPost,composeController.edit);
-router.post('/delete/:postID', middlewareController.verifyUserPost,composeController.delete);
+router.put('/:postID', middlewareController.verifyUserPost,composeController.edit);
+router.delete('/:postID', middlewareController.verifyToken ,middlewareController.verifyUserPost,composeController.delete);
 router.use('/', middlewareController.verifyToken, composeController.index);
 
 module.exports = router;
