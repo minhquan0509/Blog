@@ -1,0 +1,19 @@
+<%- include('partials/header'); -%>
+<div class="content">
+    <div class="container">
+        <form action="" method="post">
+            <div class="search">
+                <input class="search-box" type="text" name="title" id="" placeholder="Search...">
+                <span class="search-icon"><i class="ti-search"></i></span>
+            </div>
+        </form>
+        <h1 class="content-heading">Your posts</h1>
+        <p class="content-paragraph">Your published posts.</p>
+        <% posts.forEach(function(post){ %>
+        <h2 class="content-title"><%= post.title %></h2>
+        <p class="content-paragraph" markdown="1"><%= post.content.substring(0, 100) + ' ...' %> <a
+                href="/posts/<%= post._id %>">Read more</a></p>
+        <%}); %>
+    </div>
+</div>
+<%- include('partials/footer'); -%>

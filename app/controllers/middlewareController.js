@@ -14,6 +14,7 @@ const middlewareController = {
                     return res.status(403).json('Token is not valid');
                 }
                 req.user = user;
+                // console.log(user);
                 next();
             })
         }
@@ -42,7 +43,7 @@ const middlewareController = {
         }
         
         const post = await Post.findOne({_id: req.params.postID, authorID: user.id}).exec();
-        console.log(post);
+        // console.log(post);
         if(!post){
             return res.status(404).json('Not your post! Cannot modify!');
             // res.redirect('home');

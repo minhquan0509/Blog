@@ -52,6 +52,7 @@ a{
 }
 
 .navbar{
+    position: relative;
     font-size: 15px;
     letter-spacing: 5px;
     background-color: #f0f5f5;
@@ -99,6 +100,37 @@ a{
     text-overflow: ellipsis;
     max-width: 100ch;
 } */
+
+.enter{
+    left: 0px !important;
+}
+
+.menu-icon{
+    position: absolute;
+    display: inline-block;
+    font-size: 24px;
+    padding: 10px;
+}
+
+.side-menu{
+    background-color: #f0f5f5;
+    position: fixed;
+    height: 100vh;
+    margin-top: 45px;
+    z-index: 1;
+    left: -120px;
+    transition: all 1s;
+}
+.menu-list{
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item{
+    padding: 10px;
+    font-size: 16px;
+}
+
 .search{
     display: flex;
     float: right;
@@ -127,11 +159,12 @@ a{
 
 .content{
     min-height: calc(100vh - 170px);
-    margin-top: 80px;
+    /* margin-top: 80px; */
 }
 
 .container{
     margin: 0 120px;
+    padding-top: 80px;
 }
 
 .content-heading{
