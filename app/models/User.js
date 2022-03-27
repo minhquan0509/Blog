@@ -21,7 +21,11 @@ const userSchema = new mongoose.Schema({
     admin:{
         type: Boolean,
         default: false
-    }
+    },
+    firstName: String,
+    lastName: String,
+    address: String,
+
 }, 
     {timestamps: true}
 );

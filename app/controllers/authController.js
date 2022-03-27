@@ -30,7 +30,7 @@ const authController = {
             admin: user.admin
         },
         process.env.JWT_SECRET_KEY,
-        {expiresIn: '90d'});
+        {expiresIn: '3h'});
     },
 
     //LOGIN
@@ -47,7 +47,7 @@ const authController = {
                 res.cookie('token', token,{
                     httpOnly: true,
                     secure: false,
-                    expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN*24*60*60*1000)
+                    expires: new Date(Date.now() + process.env.JWT_COOKIE_EXPIRES_IN*60*60*1000)
                 });
                 // res.status(200).json({user, token});
                 res.redirect('/');
