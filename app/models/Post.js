@@ -6,7 +6,15 @@ const postSchema = new Schema({
         type: String,
         required:true
     },
-    content: String,
+    content: {
+        type: String,
+        required: true
+    },
+    createdAt: {
+        type: Date, 
+        default: Date.now
+    },
+    sanitizedHtml:  String,
     authorID: String
 })
 

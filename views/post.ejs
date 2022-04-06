@@ -6,8 +6,12 @@
         <form id="deleteForm" style="display: inline-block;" action="/compose/<%= post._id %>?_method=DELETE" method="post">
             <span class="delete-post"><i class="ti-close icon"></i><a href="#" onclick="document.getElementById('deleteForm').submit();">Delete post</a></span>
         </form>
-        <p class="content-author">Author: <%= authorName %></p>
-        <p class="content-paragraph"><%= post.content %></p>
+        <div class="content-desc">
+            <p class="content-author">Author: <%= authorName %></p>
+            <p class="content-time"><%= post.createdAt.toLocaleString() %></p>
+        </div>
+        <%- post.sanitizedHtml %>
+        <!-- <p class="content-paragraph"><%= post.content %></p> -->
     </div>
 </div>
 <%- include('partials/footer'); -%>

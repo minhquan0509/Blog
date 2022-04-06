@@ -10,9 +10,13 @@
         <h1 class="content-heading">Home</h1>
         <p class="content-paragraph">This is a personal blog/ daily journal of Quan while learning Web backend development.</p>
         <% posts.forEach(function(post){ %>
-        <h2 class="content-title"><%= post.title %></h2>
-        <p class="content-paragraph" markdown="1"><%= post.content.substring(0, 100) + ' ...' %> <a
-                href="/posts/<%= post._id %>">Read more</a></p>
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title"><%= post.title %></h2>
+                    <p class="card-content"><%= post.content.substring(0, 100) + ' ...' %></p>
+                    <a href="/posts/<%= post._id %>" class="card-button">Read more</a>
+                </div>
+            </div>
         <%}); %>
     </div>
 </div>

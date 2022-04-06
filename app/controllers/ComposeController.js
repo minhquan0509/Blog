@@ -1,6 +1,11 @@
 const Post = require('../models/Post');
 const jwt = require('jsonwebtoken');
 const {promisify} = require('util');
+const { marked } = require('marked');
+const createDomPurify = require('dompurify');
+const {JSDOM} = require('jsdom');
+const dompurify = createDomPurify(new JSDOM().window);
+
 class ComposeController{
     index(req, res){
         res.render('compose');
@@ -11,6 +16,8 @@ class ComposeController{
         const post = new Post({
             title : req.body.postTitle,
             content : req.body.postContent,
+            createdAt: new Date(),
+            sanitizedHtml: dompurify.sanitize(marked.parse(req.body.postContent)),
             authorID: userID
         });
         console.log(req.body, userID);
