@@ -100,6 +100,7 @@ a{
 .navbar-logo{
     padding: 15px;
     font-weight: 600;
+    text-align: center;
 }
 
 .navbar-container{
@@ -353,7 +354,7 @@ a{
 
 .card{
     display: inline-block;
-    width: 80%;
+    width: 100%;
     border: 1px solid #9fbfdf;
     border-radius: 10px;
     margin-bottom: 20px;
