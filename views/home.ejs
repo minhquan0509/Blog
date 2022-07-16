@@ -13,7 +13,7 @@
             <div class="card">
                 <div class="card-body">
                     <h2 class="card-title"><%= post.title %></h2>
-                    <p class="card-content"><%= post.content.substring(0, 100) + ' ...' %></p>
+                    <p class="card-content"><%- post.content.substring(0, 100) + ' ...' %></p>
                     <a href="/posts/<%= post._id %>" class="card-button">Read more</a>
                 </div>
             </div>

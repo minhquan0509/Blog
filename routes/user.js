@@ -5,6 +5,6 @@ const middlewareController = require('../app/controllers/middlewareController');
 
 router.get('/posts', middlewareController.verifyToken ,userController.getPosts );
 router.get('/info', middlewareController.verifyToken, userController.getInfo);
-router.put('/info', middlewareController.verifyToken, userController.updateInfo);
+router.put('/info', middlewareController.verifyToken, userController.uploadUserPhoto, userController.updateInfo);
 
 module.exports = router;
